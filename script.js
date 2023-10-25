@@ -6,17 +6,24 @@ function getComputerChoice(){
 }
 
 
-
+let playerScore = 0;
+let computerScore = 0;
+let drawScore = 0
 function playRounds(playerSelection, computerSelection) {
     if (playerSelection === "ROCK" && computerSelection === "SCISSOR"){
-        return("You win! You cant cut the Rock");
+        return("You win! You cant cut the Rock")
+        playerScore++ ;
     } else if(playerSelection === "PAPER" && computerSelection === "ROCK"){
         return ("You Win! Wrap that rock!");
+        playerScore++;
     }else if(playerSelection === "SCISSOR" && computerSelection === "PAPER"){
         return ("You Win! Cut that Paper!");
+        playerScore++;
     }else if (playerSelection === computerSelection){
-        return("Tie");
-    } else{ return("You lost");}
+        return("Tie")
+        drawScore++;
+    } else{ return("You lost")
+        computerScore++;}
     }
 
 function game(){;
@@ -45,6 +52,8 @@ function game(){;
         computerSelection = getComputerChoice();
        console.log(playRounds(playerSelection, computerSelection));
        console.log("")
+
+    
 }
 
 game();
