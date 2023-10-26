@@ -9,22 +9,24 @@ function getComputerChoice(){
 let playerScore = 0;
 let computerScore = 0;
 let drawScore = 0
+
 function playRounds(playerSelection, computerSelection) {
     if (playerSelection === "ROCK" && computerSelection === "SCISSOR"){
-        return("You win! You cant cut the Rock")
-        playerScore++ ;
+        console.log("You win! You cant cut the Rock")
+        return playerScore++ ;
     } else if(playerSelection === "PAPER" && computerSelection === "ROCK"){
-        return ("You Win! Wrap that rock!");
-        playerScore++;
+        console.log("You Win! Wrap that rock!");
+        return playerScore++;
     }else if(playerSelection === "SCISSOR" && computerSelection === "PAPER"){
-        return ("You Win! Cut that Paper!");
-        playerScore++;
+        console.log("You Win! Cut that Paper!")
+        return playerScore++;
     }else if (playerSelection === computerSelection){
-        return("Tie")
-        drawScore++;
-    } else{ return("You lost")
-        computerScore++;}
+        console.log("Tie");
+        return  drawScore++;
+    } else{ console.log("You lost")
+        return computerScore++;}
     }
+
 
 function game(){;
     let playerSelection = prompt("Choose your weapon!").toUpperCase();
@@ -53,7 +55,16 @@ function game(){;
        console.log(playRounds(playerSelection, computerSelection));
        console.log("")
 
+       if (playerScore >= 3){
+        console.log("You win the game.");
+       } else if (computerScore >= 3){
+        console.log("Computer wins the game.")
+       } else if (drawScore >= 3){
+        console.log("The game is draw");
+       } else {
+        console.log("Invalid game")
+    }
+
     
 }
-
 game();
