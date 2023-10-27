@@ -28,8 +28,11 @@ function playRounds(playerSelection, computerSelection) {
     }
 
 
-function game(){;
-    let playerSelection = prompt("Choose your weapon!").toUpperCase();
+function game(){
+    let playerSelection = prompt("Choose your weapon!");
+    if (playerSelection === null){
+        return;
+    }else{playerSelection = prompt("Choose your weapon!").toUpperCase();}
     let computerSelection = getComputerChoice();
        console.log(playRounds(playerSelection, computerSelection));
        console.log("")
