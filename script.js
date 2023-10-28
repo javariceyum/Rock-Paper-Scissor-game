@@ -64,9 +64,11 @@ function game(){
         console.log("Computer wins the game.")
        } else if (drawScore >= 3){
         console.log("The game is draw");
+       } else if (playerScore === computerScore || drawScore === playerScore || drawScore === computerScore) {
+        console.log("Play Again");
        } else {
-        console.log("Invalid game")
-    }
+        console.log("Invalid Game");
+       }
 
     
 }
