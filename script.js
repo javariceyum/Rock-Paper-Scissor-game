@@ -8,9 +8,23 @@ function getComputerChoice(){
 
 let playerScore = 0;
 let computerScore = 0;
-let drawScore = 0
+let drawScore = 0;
+
+
+
+let btnRock = document.querySelector('#btnRock');
+btnRock.addEventListener('click', playRounds)
+
+let btnPaper = document.querySelector('#btnPaper');
+
+
+let btnScissor = document.querySelector('#btnScissor');
+
+let playerSelection =  document.querySelectorAll('button')
+
 
 function playRounds(playerSelection, computerSelection) {
+
     if (playerSelection === "ROCK" && computerSelection === "SCISSOR"){
         console.log("You win! You cant cut the Rock")
         return playerScore++ ;
@@ -29,35 +43,7 @@ function playRounds(playerSelection, computerSelection) {
 
 
 function game(){
-    let playerSelection = prompt("Choose your weapon!");
-    if (playerSelection === null){
-        return;
-    }else{playerSelection = prompt("Choose your weapon!").toUpperCase();}
-    let computerSelection = getComputerChoice();
-       console.log(playRounds(playerSelection, computerSelection));
-       console.log("")
-       
-
-       playerSelection = prompt("Choose your weapon!").toUpperCase();
-       computerSelection = getComputerChoice();
-       console.log(playRounds(playerSelection, computerSelection));
-       console.log("")
-
-       playerSelection = prompt("Choose your weapon!").toUpperCase();
-        computerSelection = getComputerChoice();
-       console.log(playRounds(playerSelection, computerSelection));
-       console.log("")
-
-       playerSelection = prompt("Choose your weapon!").toUpperCase();
-        computerSelection = getComputerChoice();
-       console.log(playRounds(playerSelection, computerSelection));
-       console.log("")
-
-       playerSelection = prompt("Choose your weapon!").toUpperCase();
-        computerSelection = getComputerChoice();
-       console.log(playRounds(playerSelection, computerSelection));
-       console.log("")
-
+    
        if (playerScore >= 3){
         console.log("You win the game.");
        } else if (computerScore >= 3){
@@ -65,7 +51,7 @@ function game(){
        } else if (drawScore >= 3){
         console.log("The game is draw");
        } else if (playerScore === computerScore || drawScore === playerScore || drawScore === computerScore) {
-        console.log("Play Again");
+        console.log("Play");
        } else {
         console.log("Invalid Game");
        }
