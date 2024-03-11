@@ -13,50 +13,46 @@ let drawScore = 0
 function playRounds(playerSelection, computerSelection) {
     if (playerSelection === "ROCK" && computerSelection === "SCISSOR"){
         console.log("You win! You cant cut the Rock")
-        return playerScore++ ;
+        playerScore++;
     } else if(playerSelection === "PAPER" && computerSelection === "ROCK"){
         console.log("You Win! Wrap that rock!");
-        return playerScore++;
+        playerScore++;
     }else if(playerSelection === "SCISSOR" && computerSelection === "PAPER"){
         console.log("You Win! Cut that Paper!")
         return playerScore++;
     }else if (playerSelection === computerSelection){
         console.log("Tie");
-        return  drawScore++;
+        drawScore++;
     } else{ console.log("You lost")
-        return computerScore++;}
+        computerScore++;}
+        divScore.innerText = playerScore
     }
+    const divScore = document.createElement('div')
+    document.body.appendChild(divScore)
 
     function gameRock(){
-        let playerSelection = btnRock.innerHTML
+        let playerSelection = btnRock.innerText
         let computerSelection = getComputerChoice()
         console.log(playerSelection)
-        console.log(playRounds(playerSelection,computerSelection));
-    
-    
+        playRounds(playerSelection, computerSelection);
     }
     function gamePaper(){
-        let playerSelection = btnPaper.innerHTML
+        let playerSelection = btnPaper.innerText
         let computerSelection = getComputerChoice()
         console.log(playerSelection)
-        console.log(playRounds(playerSelection,computerSelection));
-    
-    
+        playRounds(playerSelection, computerSelection);
+
     }
 
     function gameScissor(){
-        let playerSelection = btnScissor.innerHTML
+        let playerSelection = btnScissor.innerText
         let computerSelection = getComputerChoice()
         console.log(playerSelection)
-        console.log(playRounds(playerSelection,computerSelection));
-    
-    
+        playRounds(playerSelection, computerSelection);
     }
 
 
-    const divText = document.createElement('div')
-    divText.innerHTML = playerScore
-    document.body.appendChild(divText)
+   
 
 const btnRock = document.querySelector('#btnRock');
 btnRock.addEventListener('click', gameRock);
@@ -66,7 +62,6 @@ btnPaper.addEventListener('click', gamePaper);
 
 const btnScissor = document.querySelector('#btnScissor');
 btnScissor.addEventListener('click', gameScissor);
-
 
 
 // function game(){
